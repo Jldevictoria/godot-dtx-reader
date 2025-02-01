@@ -1,8 +1,8 @@
 extends Node
 
 func build(source_file, options):
-	var file = File.new()
-	if file.open(source_file, File.READ) != OK:
+	var file = FileAccess.open(source_file, FileAccess.READ)
+	if !file:
 		print("Failed to open %s" % source_file)
 		return null
 		
